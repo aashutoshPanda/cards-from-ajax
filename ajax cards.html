@@ -7,22 +7,16 @@
         display: none;
         border-radius: 8px;
       }
-      @keyframes fly {
+      @keyframes fade {
         from {opacity: 0.3}
         to {opacity: 1}
       }
 
 /* The element to apply the animation to */
       .card{
-        
-        z-index:-1;
-  -webkit-box-shadow: 0 20px 15px #9B7468;
-  -moz-box-shadow: 0 20px 15px #9B7468;
-  box-shadow: 0 20px 15px #9B7468;
-  -webkit-transform: rotate(-6deg);
-  -moz-transform: rotate(-6deg);
-  transform: rotate(-6deg);
-        animation-name: fly;
+        box-shadow: 0 20px 15px #9B7468;
+        transform: rotate(-6deg);
+        animation-name: fade;
         animation-duration: 2s;
       }
       #button{
