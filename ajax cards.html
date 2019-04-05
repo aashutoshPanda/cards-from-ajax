@@ -1,14 +1,49 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Averes+Title+Regular">
     <style type="text/css">
       .container-fluid{
         display: none;
+        border-radius: 8px;
+      }
+      @keyframes fly {
+        from {opacity: 0.3}
+        to {opacity: 1}
+      }
+
+/* The element to apply the animation to */
+      .card{
+        
+        z-index:-1;
+  -webkit-box-shadow: 0 20px 15px #9B7468;
+  -moz-box-shadow: 0 20px 15px #9B7468;
+  box-shadow: 0 20px 15px #9B7468;
+  -webkit-transform: rotate(-6deg);
+  -moz-transform: rotate(-6deg);
+  transform: rotate(-6deg);
+        animation-name: fly;
+        animation-duration: 2s;
       }
       #button{
          position: fixed; /* or absolute */
           top: 50%;
           left: 50%;
+          font-family: Averes Title Regular;
+      }
+      .title-2{
+        font-family: Averes Title Regular;
+        font-weight: 500;
+      }
+      /*.blue{
+        background-color: #9EDEEA;
+      }*/
+      body {
+      background-image: url("blur-lights-bg.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+
+      background-size:cover;
       }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -24,6 +59,7 @@
     <title>Hello, world!</title>
   </head>
   <body>
+
     <input type="button" id="button" value="Click Me">
 
   <!--   <h1>Hello, world!</h1> -->
@@ -38,7 +74,9 @@
     <script type="text/javascript">
 
 
-     
+     $('#bd').find('div').each(function(){
+        // var innerDivId = $(this).attr('id');
+    });
 
 
   $.get( "https://jsonplaceholder.typicode.com/posts"
@@ -56,8 +94,8 @@
 
 
       str+=`<div class="col-xs-12 col-sm-4 col-xl-3">
-      <div class="card" style="width: 18rem;"><div class="card-body"><h5 class="card-title">`+id+`<h5><h6 class="card-subtitle mb-2 text-muted">`+title+`</h6>
-    <p class="card-text">`+des+`</p>
+      <div class="card blue" style="width: 18rem; border: 2px solid #7C7A7C;"><div class="card-body"><h5 class="card-title">`+id+`</h5><h6 class=" card-subtitle  mb-2 "style="font-weight:1000;">`+title+`</h6>
+    <p class="card-text blue">`+des+`</p>
     <a href="#" class="card-link">Card link</a>
     <a href="#" class="card-link">Another link</a>
   </div>
